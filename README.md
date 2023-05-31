@@ -6,4 +6,4 @@ This is a 3D game created using 3JS only. This app uses a 3JS CDN with custom ph
 
 Help the green box escape from the red bois and earn your high score.
 
-GAME:
+GAME: https://g-adhithya.github.io/3D-Game/
