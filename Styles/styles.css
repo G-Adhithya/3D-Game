@@ -313,17 +313,17 @@ body {
 .score {
     position: absolute;
     font-size: 25px;
-    top: 20%;
+    top: 25%;
     left: 90%;
-    transform: translate(-5%, -95%);
+    transform: translate(-25%, -90%);
     color: white;
 }
 
 .high-score {
     position: absolute;
     font-size: 25px;
-    top: 25%;
+    top: 30%;
     left: 90%;
-    transform: translate(-25%, -95%);
+    transform: translate(-30%, -90%);
     color: white;
 }
