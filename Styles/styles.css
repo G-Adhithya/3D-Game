@@ -318,3 +318,12 @@ body {
     transform: translate(-5%, -95%);
     color: white;
 }
+
+.high-score {
+    position: absolute;
+    font-size: 25px;
+    top: 25%;
+    left: 90%;
+    transform: translate(-25%, -95%);
+    color: white;
+}

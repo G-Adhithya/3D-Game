@@ -9,7 +9,6 @@ import { enemyFoot } from "./enemy.js";
 const alabaster = new THREE.Color("#EFD28D");
 const khaki = new THREE.Color("#0AF7FF");
 const red = new THREE.Color("#A30000");
-const movement = new Audio("../Assets/bushmovement-6986.mp3");
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
@@ -83,14 +82,14 @@ const keys = {
 
 movements(keys, cube, ".music");
 
-let frames = 0;
+let score = 0;
+let hscore = 0;
 const enemies = [];
 let spawnRate = 100;
 
 const easy = document.querySelector(".easy");
 const medium = document.querySelector(".medium");
 const hard = document.querySelector(".hard");
-const score = document.querySelector(".score");
 
 easy.addEventListener("click", () => {
   spawnRate = 100;
@@ -116,7 +115,7 @@ function animate() {
     id: footID,
   });
 
-  if (frames % spawnRate === 0) {
+  if (score % spawnRate === 0) {
     if (spawnRate > 20) spawnRate -= 20;
 
     const enemy = new Foot({
@@ -137,9 +136,23 @@ function animate() {
   cube.velocity.x = 0;
   cube.velocity.z = 0;
 
-  frames++;
+  score++;
 
-  document.querySelector(".score").innerHTML = `Score: ${frames}`;
+  const lastHighScore = parseFloat(localStorage.hscore);
+  const scoreString = score;
+
+  if (isNaN(lastHighScore) || score > lastHighScore) {
+    document.querySelector(
+      ".high-score"
+    ).innerHTML = `High-score: ${scoreString}`;
+    localStorage.hscore = scoreString;
+  } else {
+    document.querySelector(
+      ".high-score"
+    ).innerHTML = `High-score: ${localStorage.hscore}`;
+  }
+
+  document.querySelector(".score").innerHTML = `Score: ${score}`;
 
   if (keys.a.pressed) {
     cube.velocity.x = -0.05;
@@ -162,3 +175,5 @@ const ded = document.querySelector(".ded");
 ded.addEventListener("click", () => {
   location.reload();
 });
+
+localStorage.removeItem("score");
