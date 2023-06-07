@@ -8,9 +8,14 @@
     <link rel="stylesheet" href="./Styles/styles.css" />
   </head>
   <body>
-    <div class="canvas"></div>
+    <div class="game-menu game">
+      <h1 class="foet">BOX RUN</h1>
+      <button class="start-game">START GAME</button>
+    </div>
 
-    <div class="gameover">
+    <div class="canvas game"></div>
+
+    <div class="gameover game">
       <h1 class="glitch">YOU DED</h1>
       <button class="ded">PLAY AGAIN</button>
     </div>
@@ -19,11 +24,11 @@
       src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"
     ></script>
 
-    <h1 class="title">Box Run</h1>
+    <h1 class="title game">Box Run</h1>
 
     <audio src="./Scripts/cartoon-jump-6462.mp3" class="music"></audio>
 
-    <div class="dropdown">
+    <div class="dropdown game">
       <input type="checkbox" id="dropdown" />
 
       <label class="dropdown__face" for="dropdown">
@@ -32,18 +37,22 @@
         <div class="dropdown__arrow"></div>
       </label>
 
-      <ul class="dropdown__items">
+      <ul class="dropdown__items game">
         <li class="easy">Noob</li>
         <li class="medium">Gamer</li>
         <li class="hard">Pro Gamer</li>
       </ul>
     </div>
 
-    <img class="space" src="./Scripts/Spacebar.png" alt="" />
-    <img class="wasd" src="./Scripts/Wasd.png" alt="" />
+    <img class="space game" src="./Scripts/Spacebar.png" alt="" />
+    <img class="wasd game" src="./Scripts/Wasd.png" alt="" />
 
-    <div class="score"></div>
-    <div class="high-score"></div>
+    <div class="score game"></div>
+    <div class="high-score game"></div>
+
+    <div class="mobile">
+      <img src="./Scripts/Mobile.png" alt="Mobile mf" />
+    </div>
 
     <script type="importmap">
       {

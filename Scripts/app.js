@@ -168,8 +168,6 @@ function animate() {
   }
 }
 
-animate();
-
 const ded = document.querySelector(".ded");
 
 ded.addEventListener("click", () => {
@@ -177,3 +175,13 @@ ded.addEventListener("click", () => {
 });
 
 localStorage.removeItem("score");
+
+const start = document.querySelector(".start-game");
+const menu = document.querySelector(".game-menu");
+
+const startGame = () => {
+  menu.classList.add("game-hide");
+  animate();
+};
+
+start.addEventListener("click", startGame);

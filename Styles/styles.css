@@ -9,6 +9,7 @@
 body {
     font-family: 'Bebas Neue', sans-serif;
     background-color: #008F8F;
+    overflow: hidden;
 }
 
 .gameover {
@@ -328,12 +329,6 @@ body {
     color: white;
 }
 
-.game-hide {
-    display: none;
-    pointer-events: none;
-    transition: 0.5s all ease-in;
-}
-
 .start-game,
 .start-game::after {
     font-family: 'Bebas Neue', sans-serif;
@@ -348,11 +343,8 @@ body {
     line-height: 88px;
     box-shadow: 6px 0 0 #00e6f6;
     outline: transparent;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     font-family: 'Bebas Neue', sans-serif;
+    position: relative;
 }
 
 .start-game::after {
@@ -364,7 +356,7 @@ body {
     --slice-5: inset(80% -6px 5% 0);
 
     position: absolute;
-    content: "PLAY AGAIN";
+    content: "START GAME";
     display: block;
     top: 0;
     left: 0;
@@ -434,5 +426,51 @@ body {
     100% {
         clip-path: var(--slice-1);
         transform: translate(0);
+    }
+}
+
+.foet {
+    font-size: 45px;
+    color: white;
+}
+
+.game-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+    flex-direction: column;
+    background-color: black;
+    z-index: 50;
+}
+
+.game-hide {
+    display: none;
+    pointer-events: none;
+    transition: 1s all ease-in;
+}
+
+.mobile {
+    display: none;
+}
+
+@media (max-width:969px) {
+    .mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .game {
+        display: none;
+        pointer-events: none;
     }
 }
